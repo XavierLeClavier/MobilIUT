@@ -1,3 +1,4 @@
+/* Caractéristiques du body */
 body {
     background-color: #b6d7a8;
     margin: 0;
@@ -5,6 +6,7 @@ body {
     font-family: sans-serif;
 }
 
+/* Caractéristiques de la barre de navigation */
 nav {
     color: rgb(0, 0, 0);
     font-size: 20px;
@@ -16,6 +18,8 @@ nav {
     right: 0;
     overflow: hidden;
     background-color: #274e13;
+    display: flex;
+    align-items: center;
 }
 
 nav a {
@@ -51,28 +55,25 @@ nav a:hover {
     color: black;
 }
 
-.header-droite {
-    float: right;
-}
-
-.header-droite a {
+nav a.header-droite {
+    display: flex;
     background-color: #b6d7a8;
-    border-radius: 3px;
-    border-color: #ffd966;
+    border-radius: 3px solid #ffd966;
+    margin-left: auto; /* Move elements to the right */
 }
 
 header {
     margin-top: 0px;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
 }
 
-
-div {
+/* Caractéristiques du main */
+.fondecran{
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100% 100%;
+    background-size: 100% auto;
+    background-position: center;
+    background-image: url("../img/arrettram.jpg");
+    
 }
 
 h1 {
@@ -83,10 +84,21 @@ h1 {
     font-size: 100px;
 }
 
+h2, h3, p {
+    background-color: #b6d7a8;
+}
 h2 {
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
     margin-left: 20%;
+    margin-right: 20%;
+    color: rgb(0, 0, 0);
+}
+
+h3 {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 10%;
     margin-right: 20%;
     color: rgb(0, 0, 0);
     background-color: #b6d7a8;
@@ -97,9 +109,24 @@ p {
     margin-right: 10%
 }
 
+.img-lien {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10vh;
+    align-items: center;
+    justify-items: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.img-lien a img{
+    height: 20vh;
+}
+
+/* Caractéristiques du footer */
 footer {
     background-color: #274e13;
-    height: 3vh;
+    height: 20vh;
     width: 100%;
     bottom: 0;
     left: 0;
@@ -107,6 +134,14 @@ footer {
     z-index: 1;
     overflow: hidden;
     margin: 0px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+footer a {
+    margin-right: 3vh;
+    flex: 3;
 }
 
 footer p {
