@@ -3,16 +3,18 @@ body {
     background-color: #b6d7a8;
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+}
+
+p, h1, h2, h3{
+    font-family: 'Montserrat', sans-serif;
 }
 
 /* Caractéristiques de la barre de navigation */
 nav {
     color: rgb(0, 0, 0);
     font-size: 20px;
-    height: 9%;
+    height: 100px;
     width: 100%;
-    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -22,7 +24,7 @@ nav {
     align-items: center;
 }
 
-nav a {
+nav a{
     float: left;
     color: black;
     text-align: center;
@@ -30,64 +32,79 @@ nav a {
     font-size: 18px;
     line-height: 100%;
     border-radius: 4px;
-    margin-right: 3vh;
+    margin-right: 3vw;
+    height: 6vh;
+    width: 10vw;
 }
 
 .titre {
-    font-family: didot;
-    font-size: 5vh;
+    font-size: 5vw;
     text-align: center;
     color: #ffd966;
-    margin-top: 1vh;
+    margin-top: 1vw;
 }
 
 nav a img {
-    height: 8vh;
+    height: 8vw;
     float: left;
     margin-left: 0px;
     margin-right: 10px;
     margin-top: 0px;
-    padding: 0.5vh;
+    padding: 0.5vw;
+    width: auto;
 }
 
 nav a:hover {
-    background-color: #ddd;
+    background: #ddd;
+    box-shadow: 0 0 5px #274e13, 0 0 20px #274e13, 0 0 40px #274e13, 0 0 100px #274e13;
     color: black;
 }
 
 nav a.header-droite {
     display: flex;
     background-color: #b6d7a8;
-    border-radius: 3px solid #ffd966;
+    border: 3px solid #ffd966;
     margin-left: auto; /* Move elements to the right */
 }
 
+nav a p{
+    text-align: center;
+}
 header {
     margin-top: 0px;
 }
 
 /* Caractéristiques du main */
+main{
+    margin-top: 9vw;
+    margin-bottom: 20vh;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #b6d7a8;
+}
+
 .fondecran{
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100% auto;
+    background-size: auto;
     background-position: center;
     background-image: url("../img/arrettram.jpg");
     
 }
 
-h1 {
+main h1 {
     margin-top: 9vh;
-    font-family: didot;
     text-align: center;
     color: #ffd966;
     font-size: 100px;
+    background-color: none;
 }
 
-h2, h3, p {
+main h2, main h3, main p {
     background-color: #b6d7a8;
 }
-h2 {
+
+main h2 {
     text-align: left;
     margin-top: 20px;
     margin-left: 20%;
@@ -95,7 +112,7 @@ h2 {
     color: rgb(0, 0, 0);
 }
 
-h3 {
+main h3 {
     text-align: left;
     margin-top: 20px;
     margin-left: 10%;
@@ -104,15 +121,14 @@ h3 {
     background-color: #b6d7a8;
 }
 
-p {
+main p {
     margin-left: 10%;
     margin-right: 10%
 }
 
 .img-lien {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 10vh;
+    display: flex;
+
     align-items: center;
     justify-items: center;
     margin-top: 5vh;
@@ -120,7 +136,8 @@ p {
 }
 
 .img-lien a img{
-    height: 20vh;
+    height: auto;
+    width: 20vw;
 }
 
 /* Caractéristiques du footer */
@@ -149,4 +166,16 @@ footer p {
     color: rgb(0, 0, 0);
     margin-top: 0px;
     margin-left: 1vh;
+}
+
+/* Responsive design pour écran de moins de 700 px */
+@media (max-width: 700px) 
+{
+    nav{
+        position: fixed;
+    }
+
+    main h1{
+        font-size: 50px;
+    }
 }
