@@ -7,10 +7,12 @@ body {
 
 p, h1, h2, h3{
     font-family: 'Montserrat', sans-serif;
+    text-align: justify;
 }
 
-/* Caractéristiques de la barre de navigation */
-nav {
+/* Caractéristiques de la barre de headerigation */
+header {
+    position: fixed;
     color: rgb(0, 0, 0);
     font-size: 20px;
     height: 100px;
@@ -24,51 +26,49 @@ nav {
     align-items: center;
 }
 
-nav a{
+header a{
     float: left;
     color: black;
     text-align: center;
     text-decoration: none;
-    font-size: 18px;
+    font-size:90%;
     line-height: 100%;
     border-radius: 4px;
     margin-right: 3vw;
-    height: 6vh;
+    height: 80%;
     width: 10vw;
 }
 
 .titre {
     font-size: 5vw;
-    text-align: center;
     color: #ffd966;
-    margin-top: 1vw;
 }
 
-nav a img {
-    height: 8vw;
+header a img {
     float: left;
     margin-left: 0px;
     margin-right: 10px;
-    margin-top: 0px;
-    padding: 0.5vw;
+    height: 8vw;
     width: auto;
 }
 
-nav a:hover {
+header a:hover {
     background: #ddd;
     box-shadow: 0 0 5px #274e13, 0 0 20px #274e13, 0 0 40px #274e13, 0 0 100px #274e13;
     color: black;
 }
 
-nav a.header-droite {
+header a.header-droite {
     display: flex;
     background-color: #b6d7a8;
     border: 3px solid #ffd966;
     margin-left: auto; /* Move elements to the right */
 }
 
-nav a p{
-    text-align: center;
+header a p{
+    display: inline-block;
+    text-align: justify;
+    font-size: 1em;
 }
 header {
     margin-top: 0px;
@@ -76,8 +76,6 @@ header {
 
 /* Caractéristiques du main */
 main{
-    margin-top: 9vw;
-    margin-bottom: 20vh;
     margin-left: 10%;
     margin-right: 10%;
     background-color: #b6d7a8;
@@ -93,10 +91,9 @@ main{
 }
 
 main h1 {
-    margin-top: 9vh;
     text-align: center;
     color: #ffd966;
-    font-size: 100px;
+    font-size: 60px;
     background-color: none;
 }
 
@@ -105,11 +102,11 @@ main h2, main h3, main p {
 }
 
 main h2 {
-    text-align: left;
     margin-top: 20px;
     margin-left: 20%;
     margin-right: 20%;
     color: rgb(0, 0, 0);
+    text-align:center;
 }
 
 main h3 {
@@ -128,37 +125,53 @@ main p {
 
 .img-lien {
     display: flex;
-
     align-items: center;
     justify-items: center;
+    justify-content: center;
     margin-top: 5vh;
     margin-bottom: 5vh;
+    width: 100%
+}
+
+.img-lien a{
+    display: flex;
+    flex-direction: column;
+}
+.img-lien a p{
+    text-decoration: none;
+    text-align: center;
+}
+
+.img-lien div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .img-lien a img{
-    height: auto;
-    width: 20vw;
+    height: 15vw;
+    max-height: 350px;
+    width: auto;
+    max-width: auto;
 }
 
 /* Caractéristiques du footer */
 footer {
     background-color: #274e13;
-    height: 20vh;
     width: 100%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
     overflow: hidden;
     margin: 0px;
     display: flex;
     align-items: center;
-    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 footer a {
-    margin-right: 3vh;
     flex: 3;
+    text-decoration: none;
+    color:#ffd966;
+    margin-bottom: 20px;
 }
 
 footer p {
@@ -166,16 +179,18 @@ footer p {
     color: rgb(0, 0, 0);
     margin-top: 0px;
     margin-left: 1vh;
+    text-align: left;
+    
 }
 
 /* Responsive design pour écran de moins de 700 px */
 @media (max-width: 700px) 
 {
-    nav{
+    header{
         position: fixed;
     }
 
     main h1{
-        font-size: 50px;
+        font-size: 40px;
     }
 }
