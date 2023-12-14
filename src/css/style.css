@@ -1,8 +1,6 @@
-/* Caractéristiques du body */
+/* Caractéristiques du body au cas où l'image de fond d'écran ne marche pas*/
 body {
-    background-color: #b6d7a8;
-    margin: 0;
-    padding: 0;
+    background-color: #b6d7a8; 
 }
 
 p, h1, h2, h3, h4, ul, header div{
@@ -30,15 +28,12 @@ header a{
     color: black;
     text-align: center;
     text-decoration: none;
+    overflow-wrap: break-word;
     font-size:90%;
     line-height: 100%;
     margin: 5%;
     height: 80%;
     width: 100%;
-}
-
-header :first-child{
-    width: auto;
 }
 
 .titre {
@@ -52,13 +47,9 @@ header a img {
     float: left;
     height: 100%;
     width: auto;
+    transition: transform 0.3s ease-in-out;
 }
 
-header a:hover {
-    background: #ddd;
-    box-shadow: 0 0 5px #274e13, 0 0 20px #274e13, 0 0 40px #274e13, 0 0 100px #274e13;
-    color: black;
-}
 
 header a.header-droite {
     display: flex;
@@ -71,16 +62,25 @@ header a p{
     display: inline-block;
     text-align: justify;
     font-size: 1em;
+    overflow-wrap: break-word;
 }
-header {
-    margin-top: 0px;
+
+header a:not(:first-child):hover {
+    background: #91c26e;
+}
+
+.popup:hover{
+    transform: scale(1.1);
 }
 
 /* Caractéristiques du main */
+.bgvert{
+    background-color: #b6d7a8;
+}
+
 main{
     margin-left: 10%;
     margin-right: 10%;
-    background-color: #b6d7a8;
 }
 
 .fondecran{
@@ -88,20 +88,25 @@ main{
     background-attachment: fixed;
     background-size: auto;
     background-position: center;
+    margin: 0px;
+    padding:  0px;
+}
+
+.arrettram{
     background-image: url("../img/arrettram.jpg");
-    
+}
+
+.arrettramBU{
+    background-image: url("../img/arrettramBU.jpg");
 }
 
 main h1 {
     text-align: center;
-    color: #ffd966;
+    color: #000000;
     font-size: 60px;
-    background-color: none;
+    background-color:transparent;
 }
 
-main h2, main h3, main p, main h4 {
-    background-color: #b6d7a8;
-}
 
 main h2 {
     margin-top: 20px;
@@ -117,7 +122,6 @@ main h3 {
     margin-left: 10%;
     margin-right: 20%;
     color: rgb(0, 0, 0);
-    background-color: #b6d7a8;
 }
 
 main p {
@@ -129,7 +133,7 @@ main p {
     display: flex;
     align-items: center;
     justify-items: center;
-    justify-content: center;
+    justify-content: space-around;
     margin-top: 5vh;
     margin-bottom: 5vh;
     width: 100%
@@ -162,7 +166,6 @@ footer {
     background-color: #274e13;
     width: 100%;
     overflow: hidden;
-    margin: 0px;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -179,7 +182,6 @@ footer a {
 footer p {
     font-size: 15px;
     color: rgb(0, 0, 0);
-    margin-top: 0px;
     margin-left: 1vh;
     text-align: left;
     
@@ -189,7 +191,7 @@ footer div :last-child{
     margin-top: 5px;
 }
 
-footer img{
+footer img:last-child{
     height: 10vw;
     width: auto;
 }
@@ -203,5 +205,7 @@ footer img{
 
     main h1{
         font-size: 40px;
+        margin-top: 100px;
+
     }
 }
