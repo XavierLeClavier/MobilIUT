@@ -5,14 +5,13 @@ body {
     padding: 0;
 }
 
-p, h1, h2, h3{
+p, h1, h2, h3, h4, ul, header div{
     font-family: 'Montserrat', sans-serif;
     text-align: justify;
 }
 
 /* Caractéristiques de la barre de headerigation */
 header {
-    position: fixed;
     color: rgb(0, 0, 0);
     font-size: 20px;
     height: 100px;
@@ -33,22 +32,25 @@ header a{
     text-decoration: none;
     font-size:90%;
     line-height: 100%;
-    border-radius: 4px;
-    margin-right: 3vw;
+    margin: 5%;
     height: 80%;
-    width: 10vw;
+    width: 100%;
+}
+
+header :first-child{
+    width: auto;
 }
 
 .titre {
     font-size: 5vw;
     color: #ffd966;
+    margin: 5%;
+    margin-left: 0px;
 }
 
 header a img {
     float: left;
-    margin-left: 0px;
-    margin-right: 10px;
-    height: 8vw;
+    height: 100%;
     width: auto;
 }
 
@@ -97,7 +99,7 @@ main h1 {
     background-color: none;
 }
 
-main h2, main h3, main p {
+main h2, main h3, main p, main h4 {
     background-color: #b6d7a8;
 }
 
@@ -181,6 +183,15 @@ footer p {
     margin-left: 1vh;
     text-align: left;
     
+}
+
+footer div :last-child{
+    margin-top: 5px;
+}
+
+footer img{
+    height: 10vw;
+    width: auto;
 }
 
 /* Responsive design pour écran de moins de 700 px */
