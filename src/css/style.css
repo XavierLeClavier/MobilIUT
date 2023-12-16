@@ -1,11 +1,12 @@
-/* Caractéristiques du body au cas où l'image de fond d'écran ne marche pas*/
+/* Caractéristiques du body + background-color au cas où l'image de fond d'écran ne s'affiche pas*/
 body {
-    background-color: #b6d7a8; 
+    background-color: #b6d7a8;
 }
 
-p, h1, h2, h3, h4, ul, header div{
+p, h1, h2, h3, h4, ul, header div, a, label {
     font-family: 'Montserrat', sans-serif;
     text-align: justify;
+    text-decoration: none;
 }
 
 /* Caractéristiques de la barre de headerigation */
@@ -18,18 +19,18 @@ header {
     left: 0;
     right: 0;
     overflow: hidden;
-    background-color: #274e13;
+    background-color: #274e13a9;
     display: flex;
     align-items: center;
 }
 
-header a{
+header a {
     float: left;
     color: black;
     text-align: center;
     text-decoration: none;
     overflow-wrap: break-word;
-    font-size:90%;
+    font-size: 90%;
     line-height: 100%;
     margin: 5%;
     height: 80%;
@@ -51,69 +52,88 @@ header a img {
 }
 
 
-header a.header-droite {
+header a:not(:first-child) {
     display: flex;
-    background-color: #b6d7a8;
+    background-color: #8dd16fce;
     border: 3px solid #ffd966;
-    margin-left: auto; /* Move elements to the right */
+    border-radius: 0px 12px 0px 12px;
+    margin-left: auto;
+    position: relative;
 }
 
-header a p{
-    display: inline-block;
-    text-align: justify;
-    font-size: 1em;
-    overflow-wrap: break-word;
+header a:not(:first-child)::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
 }
 
-header a:not(:first-child):hover {
-    background: #91c26e;
+header a:not(:first-child):hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
-.popup:hover{
-    transform: scale(1.1);
+header a:not(:first-child)::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: #af9d00;
+    z-index: -1;
+    transition: transform .3s ease;
 }
 
-/* Caractéristiques du main */
-.bgvert{
-    background-color: #b6d7a8;
+/* Caractéristiques du fond d'écran */
+
+.bgvert {
+    background-color: #87e27fc4;
 }
 
-main{
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.fondecran{
+.fondecran {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: auto;
     background-position: center;
     margin: 0px;
-    padding:  0px;
+    padding: 0px;
 }
 
-.arrettram{
+.arrettram {
     background-image: url("../img/arrettram.jpg");
 }
 
-.arrettramBU{
+.arrettramBU {
     background-image: url("../img/arrettramBU.jpg");
 }
 
-main h1 {
-    text-align: center;
-    color: #000000;
-    font-size: 60px;
-    background-color:transparent;
+.metroB {
+    background-image: url("../img/metrob.jpg");
 }
 
+/* Caractéristiques du main */
+
+main {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+main h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 60px;
+    background-color: transparent;
+    text-shadow: rgba(83, 78, 2, 0.8) 5px 10px 5px;
+}
 
 main h2 {
     margin-top: 20px;
     margin-left: 20%;
     margin-right: 20%;
     color: rgb(0, 0, 0);
-    text-align:center;
+    text-align: center;
 }
 
 main h3 {
@@ -124,10 +144,18 @@ main h3 {
     color: rgb(0, 0, 0);
 }
 
+main h4 {
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #ffffff;
+}
+
 main p {
     margin-left: 10%;
     margin-right: 10%
 }
+
+/* Caractéristiques des images qui servent de liens */
 
 .img-lien {
     display: flex;
@@ -139,11 +167,12 @@ main p {
     width: 100%
 }
 
-.img-lien a{
+.img-lien a {
     display: flex;
     flex-direction: column;
 }
-.img-lien a p{
+
+.img-lien a p {
     text-decoration: none;
     text-align: center;
 }
@@ -154,11 +183,97 @@ main p {
     justify-content: center;
 }
 
-.img-lien a img{
+.img-lien a img {
     height: 15vw;
     max-height: 350px;
     width: auto;
     max-width: auto;
+}
+
+/* Caractéristiques des éléments dans une boite jaune */
+.box {
+    background-color: rgba(243, 240, 70, 0.753);
+    margin: 10%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid black;
+    box-shadow: rgba(240, 227, 46, 0.4) 5px 5px, rgba(227, 240, 46, 0.3) 10px 10px, rgba(237, 240, 46, 0.2) 15px 15px, rgba(237, 240, 46, 0.1) 20px 20px, rgba(240, 237, 46, 0.05) 25px 25px;
+}
+
+
+cite {
+    font-size: 20px;
+}
+
+
+/* Caractéristiques des listes */
+
+ul{
+    margin-right: 5%;
+}
+
+li{
+    margin-bottom: 3%;
+}
+
+/* Caractéristiques du formulaire */
+
+
+.checkbox input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+}
+
+.checkbox {
+    --size: 50px;
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content:left ;
+}
+
+.checkbox .block {
+    flex-direction:row;
+}
+
+.block p{
+
+}
+.checkbox label {
+    width: var(--size);
+    height: calc(var(--size) / 2);
+    box-sizing: border-box;
+    border: 3px solid;
+    float: left;
+    border-radius: 100px;
+    position: relative;
+    cursor: pointer;
+    transition: .3s ease;
+    color: black;
+}
+
+.checkbox input[type=checkbox]:checked+label {
+    background: #55e868;
+}
+
+.checkbox input[type=checkbox]:checked+label:before {
+    left: calc(var(--size) / 2);
+}
+
+.checkbox label:before {
+    transition: .3s ease;
+    content: '';
+    width: calc((var(--size) / 2) - 10px);
+    height: calc((var(--size) / 2) - 10px);
+    position: absolute;
+    background: white;
+    left: 2px;
+    top: 2px;
+    box-sizing: border-box;
+    border: 3px solid;
+    color: black;
+    border-radius: 100px;
 }
 
 /* Caractéristiques du footer */
@@ -175,7 +290,7 @@ footer {
 footer a {
     flex: 3;
     text-decoration: none;
-    color:#ffd966;
+    color: #ffd966;
     margin-bottom: 20px;
 }
 
@@ -184,26 +299,27 @@ footer p {
     color: rgb(0, 0, 0);
     margin-left: 1vh;
     text-align: left;
-    
+
 }
 
-footer div :last-child{
+footer div :last-child {
     margin-top: 5px;
 }
 
-footer img:last-child{
+footer img:last-child {
     height: 10vw;
     width: auto;
 }
 
+
+
 /* Responsive design pour écran de moins de 700 px */
-@media (max-width: 700px) 
-{
-    header{
+@media (max-width: 700px) {
+    header {
         position: fixed;
     }
 
-    main h1{
+    main h1 {
         font-size: 40px;
         margin-top: 100px;
 
