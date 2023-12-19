@@ -5,18 +5,14 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<link
-		href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Roboto:400,700|Lato:400,700|Montserrat:400,700|Nunito:400,700&display=swap"
-		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 	<title>Site Matthieu Xavier</title>
 </head>
 
 <body class="fondecran arrettramBU">
 	<header>
-		<a href="../../index.html"><img src="../img/logo.png" alt="Logo plante"></a>
-		<div class="titre">
-			<p>Mobil'IUT</p>
-		</div>
+		<a href="../../index.html"><img src="../img/logo.png" alt="Logo plante" class="popout"></a>
+		<div class="titre">Mobil'IUT</div>
 		<a href="https://www.univ-lyon1.fr/" class="header-droite">
 			<p>Site de Lyon 1</p>
 		</a>
@@ -24,15 +20,13 @@
 			<p>Infos utiles & horaires</p>
 		</a>
 		<a href="page3.html" class="header-droite">
-			<p>Newslettter</p>
+			<p>Newsletter</p>
 		</a>
 	</header>
 	<main>
 		<h1>Soyez au cœur de la mobilité durable à Lyon !</h1>
 		<div class="bgvert">
-			<a href="https://350.org/fr/">
-				<p>🌱 <!--Easter egg--></p>
-			</a>
+			<br />
 			<p>Nous sommes ravis de vous inviter à rejoindre notre communauté en vous abonnant à notre newsletter
 				exclusive. En vous abonnant, vous serez parmi les premiers à découvrir les dernières actualités sur les
 				lignes de transports en communs, ainsi que d'autres informations passionnantes sur la mobilité durable
@@ -68,59 +62,61 @@
 					vivre
 					une expérience de mobilité durable exceptionnelle à Lyon.</li>
 			</ul>
-			<div class="box">
-				<cite>Ensemble, construisons un avenir où la mobilité rime avec durabilité !</cite>
-			</div>
 
-			<div class="box">
+			<div class="box form">
 
 				<form
 					action="https://perso.liris.cnrs.fr/pierre-antoine.champin/enseignement/intro-web/_static/formproc/debug"
 					method="POST">
-					<h2>Abonnez-vous !</h2>
-
-					<label>Adresse Email</label>
-					<input type="email" name="EMAIL" required>
-
-					<label>Choisissez votre newsletter</label>
+					<h2>Abonnez-vous</h2>
 					<div>
+						<input type="email" name="EMAIL" required placeholder="Adresse Email">
+					</div>
+					<div>
+						<label><strong>Choisissez votre newsletter</strong></label><br />
 						<input type="radio" value="Hebdomaire" name="OPTION_TEMPS">
 						<label>Hebdomadaire</label>
-
 						<input type="radio" value="Mensuel" name="OPTION_TEMPS">
 						<label>Mensuel</label>
-
 						<input type="radio" value="Annuel" name="OPTION_TEMPS">
 						<label>Annuel</label>
 					</div>
-
-					<label>De quoi voulez-vous être informé?</label>
+					<label><strong>De quoi voulez-vous être informé?</strong></label><br />
 					<div class="checkbox">
 						<div class="block">
-							<input type="checkbox" name="Theme" id="cb1" value="infoTCL">
-							<label for="cb1"></label>
+							<div><input type="checkbox" name="Theme" id="cb1" value="infoTCL">
+								<label for="cb1"></label>
+							</div>
 							<p>Informations sur TCL</p>
 						</div>
 						<div class="block">
-							<input type="checkbox" name="Theme" id="cb2" value="actuCampus">
-							<label for="cb2"></label>
+							<div>
+								<input type="checkbox" name="Theme" id="cb2" value="actuCampus">
+								<label for="cb2"></label>
+							</div>
 							<p>Astuces et conseils</p>
 						</div>
 						<div class="block">
-							<input type="checkbox" name="Theme" id="cb3" value="offres">
-							<label for="cb3"></label>
-							<p>Offres spéciales</p>
+							<div><input type="checkbox" name="Theme" id="cb3" value="offres">
+								<label for="cb3"></label>
+								<p>Offres spéciales</p>
+							</div>
 						</div>
 						<div class="block">
-							<input type="checkbox" name="Theme" id="cb4" value="evenements">
-							<label for="cb4"></label>
-							<p>Evénements spéciaux</p>
+							<div>
+								<input type="checkbox" name="Theme" id="cb4" value="evenements">
+								<label for="cb4"></label>
+								<p>Evénements spéciaux</p>
+							</div>
 						</div>
 					</div>
 
-					<input type="submit" value="S'Abonner" name="subscribe">
+					<input type="submit" value="Confirmer" name="abonner">
 				</form>
 
+			</div>
+			<div class="box">
+				<cite>Ensemble, construisons un avenir où la mobilité rime avec durabilité !</cite>
 			</div>
 			<br />
 		</div>
@@ -129,7 +125,7 @@
 	<footer>
 		<div><a href="https://iut.univ-lyon1.fr/"><img src="../img/logoiut.png" alt="Site de l'IUT"></a></div>
 		<div>
-			<p>Nos infos: <a href="https://www.github.com/XavierLeClavier">Xavier</a> et <a
+			<p>Crée par : <a href="https://www.github.com/XavierLeClavier">Xavier</a> et <a
 					href="https://www.github.com/ELMoutone">Matthieu</a></p>
 		</div>
 		<div><img src="../img/logo.png" alt="Logo plante"></div>
