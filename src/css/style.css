@@ -18,6 +18,7 @@ label {
 }
 
 /* Caractéristiques de la barre de navigation */
+
 header {
     color: rgb(0, 0, 0);
     font-size: 20px;
@@ -30,6 +31,7 @@ header {
     background-color: #274e13a9;
     display: flex;
     align-items: center;
+    z-index: 999;
 }
 
 header a {
@@ -65,6 +67,7 @@ header a:not(:first-child) {
     border-radius: 0px 12px 0px 12px;
     margin-left: auto;
     position: relative;
+
 }
 
 header a:not(:first-child)::before {
@@ -84,7 +87,7 @@ header a:not(:first-child)::before {
 /* Caractéristiques du fond d'écran */
 
 .bgvert {
-    background-color: #87e27fc4;
+    background-color: #87e27ff6;
 }
 
 .fondecran {
@@ -187,7 +190,7 @@ main em {
     text-align: center;
 }
 
-.img-lien a div {
+.img-lien:not(#index) a div {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -198,31 +201,32 @@ main em {
     height: 15vw;
     max-height: 350px;
     width: auto;
+    z-index: 1;
 }
 
-.img-lien a div::before,
-.img-lien a div::after {
+.img-lien:not(#index) a div::before,
+.img-lien:not(#index) a div::after {
     content: "";
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: -1;
-    border: 2px solid #f3f046c0;
+    z-index: 0;
+    border: 2px solid #f0ed2ad2;
     transition: all .25s ease-out;
 }
 
-.img-lien a div::before {
-    background-color: #f3f046c0;
+.img-lien:not(#index) a div::before {
+    background-color: #f0ed2ad2;
     top: -15px;
     left: -15px;
 }
 
-.img-lien a div::after {
+.img-lien:not(#index) a div::after {
     bottom: -15px;
     right: -15px;
 }
 
-.img-lien a div:hover {
+.img-lien:not(#index) a div:hover {
     &::before {
         top: 15px;
         left: 15px;
@@ -261,11 +265,24 @@ li {
     margin-bottom: 3%;
 }
 
+/* Caractéristique de la carte interactive */
+
+iframe{
+    width: 100%;
+    height: auto;
+}
+
 /* Caractéristiques du formulaire */
 
 form {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-areas: 
+    'email email news'
+    'email email news'
+    'inform inform inform'
+    'info astuce'
+    'offre evenement'
+    'submit';
 }
 
 input {
@@ -275,10 +292,16 @@ input {
     padding: .75rem 1rem;
 }
 
-input[class="submit"] {
+input[type="submit"] {
     background: #55e868;
     box-shadow: 0 .75rem .5rem -.5rem #87e27f;
-    
+    cursor: pointer;
+    font-size: 10px;
+    transition: font-size 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover{
+    font-size:115px;
 }
 
 input[type=radio] {
@@ -350,6 +373,8 @@ input[type=radio]:checked {
     color: #000000;
     border-radius: 100px;
 }
+
+
 
 /* Caractéristiques du footer */
 footer {
