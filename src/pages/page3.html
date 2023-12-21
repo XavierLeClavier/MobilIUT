@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-	<title>Site Matthieu Xavier</title>
+	<title>Mobil'IUT</title>
 </head>
-
 <body class="fondecran arrettramBU">
 	<header>
 		<a href="../../index.html"><img src="../img/logo.png" alt="Logo plante" class="popout"></a>
@@ -26,26 +24,20 @@
 	<main>
 		<h1>Soyez au cœur de la mobilité durable à Lyon !</h1>
 		<div class="bgvert">
-			<br />
 			<p>Nous sommes ravis de vous inviter à rejoindre notre communauté en vous abonnant à notre newsletter
 				exclusive. En vous abonnant, vous serez parmi les premiers à découvrir les dernières actualités sur les
 				lignes de transports en communs, ainsi que d'autres informations passionnantes sur la mobilité durable
 				dans votre Université Lyon 1.</p>
-
 			<h2>Pourquoi Vous Abonner ?</h2>
-
 			<ul>
 				<li>Infos Privilégiées : Recevez des mises à jour régulières sur les horaires,
 					les nouvelles fonctionnalités, et les événements spéciaux liés aux trasnports sur votre campus.</li>
-
 				<li>Conseils de Déplacement : Bénéficiez de conseils pratiques pour optimiser vos trajets quotidiens,
 					que vous soyez étudiant, professionnel ou résident.</li>
-
 				<li>Offres Exclusives : Profitez d'offres spéciales réservées aux abonnés,
 					telles que des réductions sur les transports,
 					des partenariats avec des commerces locaux,
 					et bien plus encore.</li>
-
 				<li>Événements Communautaires : Soyez informé des événements spéciaux
 					et des initiatives communautaires liées à la mobilité durable à Lyon,
 					et participez activement à la construction d'une ville plus verte et accessible.</li>
@@ -57,71 +49,58 @@
 					En tant qu'abonné, vous ferez partie intégrante de notre mission visant à promouvoir des transports
 					en commun
 					écologiques et à construire un avenir plus durable pour Lyon.</li>
-
 				<li>Rejoignez-nous dès maintenant en vous abonnant à notre newsletter et soyez aux premières loges pour
 					vivre
 					une expérience de mobilité durable exceptionnelle à Lyon.</li>
 			</ul>
-
+			
 			<div class="box form">
-
+				<h2>Abonnez vous !</h2>
 				<form
 					action="https://perso.liris.cnrs.fr/pierre-antoine.champin/enseignement/intro-web/_static/formproc/debug"
 					method="POST">
-					<h2>Abonnez-vous</h2>
-					<div>
-						<input type="email" name="EMAIL" required placeholder="Adresse Email">
-					</div>
-					<div>
-						<label><strong>Choisissez votre newsletter</strong></label><br />
-						<input type="radio" value="Hebdomaire" name="OPTION_TEMPS">
-						<label>Hebdomadaire</label>
-						<input type="radio" value="Mensuel" name="OPTION_TEMPS">
-						<label>Mensuel</label>
-						<input type="radio" value="Annuel" name="OPTION_TEMPS">
-						<label>Annuel</label>
-					</div>
-					<label><strong>De quoi voulez-vous être informé?</strong></label><br />
-					<div class="checkbox">
-						<div class="block">
-							<div><input type="checkbox" name="Theme" id="cb1" value="infoTCL">
-								<label for="cb1"></label>
-							</div>
-							<p>Informations sur TCL</p>
-						</div>
-						<div class="block">
-							<div>
-								<input type="checkbox" name="Theme" id="cb2" value="actuCampus">
-								<label for="cb2"></label>
-							</div>
-							<p>Astuces et conseils</p>
-						</div>
-						<div class="block">
-							<div><input type="checkbox" name="Theme" id="cb3" value="offres">
-								<label for="cb3"></label>
-								<p>Offres spéciales</p>
-							</div>
-						</div>
-						<div class="block">
-							<div>
-								<input type="checkbox" name="Theme" id="cb4" value="evenements">
-								<label for="cb4"></label>
-								<p>Evénements spéciaux</p>
-							</div>
-						</div>
-					</div>
-
-					<input type="submit" value="Confirmer" name="abonner">
+					<label><strong>Choisissez votre newsletter</strong></label>
+					<ul>
+						<li><input type="radio" tabindex="2" value="Hebdomadaire" id="hebdo" name="OPTION_TEMPS"></li>
+						<label for="hebdo">Hebdomadaire</label>
+						<li><input type="radio" tabindex="3" value="Mensuel" id="mensuel" name="OPTION_TEMPS"></li>
+						<label for="mensuel">Mensuel</label>
+						<li><input type="radio" tabindex="4" value="Annuel" id="annuel" name="OPTION_TEMPS"></li>
+						<label for="annuel">Annuel</label>
+					</ul>
+					<label><strong>De quoi voulez-vous être informé?</strong></label>
+					<ul class="checkbox">
+						<li>
+							<input type="checkbox" name="Theme" id="cb1" value="infoTCL">
+							<label for="cb1" tabindex="5"></label>
+						</li>
+						<label for="cb1">Informations sur TCL</label>
+						<li>
+							<input type="checkbox" name="Theme" id="cb2" value="actuCampus">
+							<label for="cb2" tabindex="6"></label>
+						</li>
+						<label for="cb2">Astuces et conseils</label>
+						<li>
+							<input type="checkbox" name="Theme" id="cb3" value="offres">
+							<label for="cb3" tabindex="7"></label>
+						</li>
+						<label for="cb3">Offres spéciales</label>
+						<li>
+							<input type="checkbox" name="Theme" id="cb4" value="evenements">
+							<label for="cb4" tabindex="8"></label>
+						</li>
+						<label for="cb4">Evénements spéciaux</label>
+					</ul>
+					<input type="email" tabindex="1" "EMAIL" required placeholder="Adresse Email">
+					<input type="submit" tabindex="9" value="Confirmer" name="abonner">
 				</form>
-
 			</div>
 			<div class="box">
 				<cite>Ensemble, construisons un avenir où la mobilité rime avec durabilité !</cite>
 			</div>
-			<br />
+			<a href="#"><p>Retour haut de page</p></a>
 		</div>
 	</main>
-
 	<footer>
 		<div><a href="https://iut.univ-lyon1.fr/"><img src="../img/logoiut.png" alt="Site de l'IUT"></a></div>
 		<div>
@@ -131,5 +110,4 @@
 		<div><img src="../img/logo.png" alt="Logo plante"></div>
 	</footer>
 </body>
-
 </html>

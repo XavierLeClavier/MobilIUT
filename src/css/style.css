@@ -4,21 +4,7 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-p,
-h1,
-h2,
-h3,
-h4,
-ul,
-header div,
-a,
-label {
-    text-align: justify;
-    text-decoration: none;
-}
-
 /* Caractéristiques de la barre de navigation */
-
 header {
     color: rgb(0, 0, 0);
     font-size: 20px;
@@ -31,7 +17,6 @@ header {
     background-color: #274e13a9;
     display: flex;
     align-items: center;
-    z-index: 999;
 }
 
 header a {
@@ -60,34 +45,29 @@ header a img {
     width: auto;
 }
 
-header a:not(:first-child) {
+header a:not(:first-child),
+header a:not(:first-child):hover::after {
     display: flex;
     background-color: #8dd16fce;
     border: 3px solid #ffd966;
-    border-radius: 0px 12px 0px 12px;
+    border-radius: 0px 12px;
     margin-left: auto;
     position: relative;
-
+    transition: 0.4s ease-in-out;
 }
 
-header a:not(:first-child)::before {
-    content: " ";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    inset: 0 0 0 0;
-    background: #af9d00;
-    z-index: -1;
+header a:not(:first-child):hover {
+    border-radius: 25px 0px;
+    transition: 0.4s ease-in-out;
+    background-color: #8cd16f;
+    border-color: transparent;
 }
-
 
 /* Caractéristiques du fond d'écran */
-
 .bgvert {
-    background-color: #87e27ff6;
+    background-color: #ade6a8f8;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .fondecran {
@@ -112,12 +92,10 @@ header a:not(:first-child)::before {
 }
 
 /* Caractéristiques du main */
-
 main {
     margin-left: 10%;
     margin-right: 10%;
 }
-
 
 main h1 {
     text-align: center;
@@ -131,7 +109,7 @@ main h2 {
     margin-top: 20px;
     margin-left: 20%;
     margin-right: 20%;
-    color: rgb(0, 0, 0);
+    color: #000000;
     text-align: center;
 }
 
@@ -140,7 +118,7 @@ main h3 {
     margin-top: 20px;
     margin-left: 10%;
     margin-right: 20%;
-    color: rgb(0, 0, 0);
+    color: #000000;
 }
 
 main h4 {
@@ -159,17 +137,23 @@ main em {
     background-color: #94962273;
 }
 
+main a {
+    text-decoration: none;
+}
 
-.popout{
+.popout {
     transition: transform 0.3s ease-in-out;
 }
 
-.popout:hover{
+.popout:hover {
     transform: scale(1.15);
 }
 
-/* Caractéristiques des images qui servent de liens */
+a[href="#"] {
+    text-align: center;
+}
 
+/* Caractéristiques des images qui servent de liens */
 .img-lien {
     display: flex;
     align-items: center;
@@ -190,7 +174,7 @@ main em {
     text-align: center;
 }
 
-.img-lien:not(#index) a div {
+.img-lien a div {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -226,22 +210,58 @@ main em {
     right: -15px;
 }
 
-.img-lien:not(#index) a div:hover {
-    &::before {
-        top: 15px;
-        left: 15px;
-    }
+.img-lien:not(#index) a div:hover::before {
+    top: 15px;
+    left: 15px;
+}
 
-    &::after {
-        bottom: 15px;
-        right: 15px;
-    }
+.img-lien:not(#index) a div:hover::after {
+    bottom: 15px;
+    right: 15px;
+}
+
+
+/* Caractéristiques des tableaux */
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: separate;
+    border-spacing: .45em 1em;
+}
+
+table th,
+table td {
+    padding: .25em .5em;
+    text-align: left;
+}
+
+table td:nth-child(2) {
+    text-align: right;
+}
+
+table td {
+    background-color: #eee;
+}
+
+table th {
+    background-color: #274e13a9;
+    color: #fff;
+}
+
+tbody tr:nth-child(odd) {
+    transform: rotate(1.5deg);
+}
+
+thead tr,
+tbody tr:nth-child(even) {
+    transform: rotate(-1.5deg);
 }
 
 /* Caractéristiques des éléments dans une boite jaune */
 .box {
     background-color: #f3f046c0;
-    margin: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
     padding: 20px;
     text-align: center;
     border-radius: 15px;
@@ -249,14 +269,11 @@ main em {
     box-shadow: rgba(240, 227, 46, 0.4) 5px 5px, rgba(227, 240, 46, 0.3) 10px 10px, rgba(237, 240, 46, 0.2) 15px 15px, rgba(237, 240, 46, 0.1) 20px 20px, rgba(240, 237, 46, 0.05) 25px 25px;
 }
 
-
 cite {
     font-size: 20px;
 }
 
-
 /* Caractéristiques des listes */
-
 ul {
     margin-right: 5%;
 }
@@ -266,23 +283,75 @@ li {
 }
 
 /* Caractéristique de la carte interactive */
-
-iframe{
+iframe {
     width: 100%;
     height: auto;
 }
 
 /* Caractéristiques du formulaire */
-
 form {
     display: grid;
-    grid-template-areas: 
-    'email email news'
-    'email email news'
-    'inform inform inform'
-    'info astuce'
-    'offre evenement'
-    'submit';
+    width: 100%;
+    height: auto;
+    grid-template-rows: 1fr 1fr 3fr 1fr 4fr 1fr;
+}
+
+form>:nth-child(1) {
+    grid-row: 2;
+}
+
+form>:nth-child(2) {
+    grid-row: 3;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+form>:nth-child(2)>*:nth-child(odd) {
+    flex-basis: 20%;
+}
+
+form>:nth-child(2)>*:nth-child(even) {
+    flex-basis: 80%;
+}
+
+form>:nth-child(3) {
+    grid-row: 4;
+}
+
+form>:nth-child(4) {
+    grid-row: 5;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+form>:nth-child(4)>*:nth-child(odd) {
+    flex-basis: 20%;
+}
+
+form>:nth-child(4)>*:nth-child(even) {
+    flex-basis: 80%;
+}
+
+form>:nth-child(5) {
+    grid-row: 1;
+    margin-bottom: 10px;
+}
+
+form>:nth-child(6) {
+    grid-row: 6;
+}
+
+form ul p {
+    margin: 0px;
+    text-align: left;
 }
 
 input {
@@ -296,22 +365,21 @@ input[type="submit"] {
     background: #55e868;
     box-shadow: 0 .75rem .5rem -.5rem #87e27f;
     cursor: pointer;
-    font-size: 10px;
+    font-size: inherit;
     transition: font-size 0.3s ease-in-out;
 }
 
-input[type="submit"]:hover{
-    font-size:115px;
+input[type="submit"]:hover {
+    font-size: 21px;
 }
 
 input[type=radio] {
-    height: 1.09em;
-    aspect-ratio: 1;
-    /* ^^^^ ceci apparaît comme une erreur mais est nécessaire et nous n'avons pas trouvé de remplacement*/
+    height: 17px;
+    width: 17px;
     border: calc(1.09em/8) solid #000000;
     padding: calc(1.09em/8);
     background:
-        radial-gradient(farthest-side, #55e868 94%, #0000) 50%/0 0 no-repeat content-box;
+        radial-gradient(farthest-side, #3e9911 94%, #0000) 50%/0 0 no-repeat content-box;
     border-radius: 50%;
     outline-offset: calc(1.09em/10);
     appearance: none;
@@ -321,7 +389,7 @@ input[type=radio] {
 }
 
 input[type=radio]:checked {
-    border-color: #55e868;
+    border-color: #000000;
     background-size: 100% 100%;
 }
 
@@ -330,15 +398,17 @@ input[type=radio]:checked {
     visibility: hidden;
 }
 
-.checkbox {
-    --size: 40px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: left;
+form ul {
+    list-style: none;
+    padding: 0;
 }
 
-.checkbox label {
+label {
+    cursor: pointer;
+    text-align: left;
+}
+
+.checkbox label:not(li+label) {
     width: 40px;
     height: 20px;
     box-sizing: border-box;
@@ -346,20 +416,19 @@ input[type=radio]:checked {
     float: left;
     border-radius: 100px;
     position: relative;
-    cursor: pointer;
     transition: .3s ease;
     color: #000000;
 }
 
 .checkbox input[type=checkbox]:checked+label {
-    background: #55e868;
+    background: #3e9911;
 }
 
 .checkbox input[type=checkbox]:checked+label:before {
     left: 20px;
 }
 
-.checkbox label:before {
+.checkbox label:not(li+label)::before {
     transition: .3s ease;
     content: '';
     width: 10px;
@@ -373,8 +442,6 @@ input[type=radio]:checked {
     color: #000000;
     border-radius: 100px;
 }
-
-
 
 /* Caractéristiques du footer */
 footer {
@@ -398,7 +465,6 @@ footer p {
     font-size: 15px;
     margin-left: 1vh;
     text-align: left;
-
 }
 
 footer div :last-child {
@@ -410,13 +476,11 @@ footer img:last-child {
     width: auto;
 }
 
-
-
 /* Responsive design pour écran de moins de 700 px */
 @media (max-width: 700px) {
     header {
         position: fixed;
-        z-index: 1;
+        z-index: 2;
     }
 
     .titre {
@@ -426,23 +490,61 @@ footer img:last-child {
     main h1 {
         font-size: 40px;
         margin-top: 100px;
-
     }
 
-    /* img-lien */
-    .img-lien a p{
+    .img-lien a p {
         display: none;
     }
 
-    /* footer */
-    footer>div:nth-child(3){
-        display: none;
+    .img-lien:last-of-type {
+        padding-bottom: 30px;
     }
 
+    footer>div:nth-child(3) {
+        display: none;
+    }
+}
+
+/* Responsive desgin pour les écrans de plus de 1000px */
+@media (min-width: 1000px) {
+    form {
+        display: grid;
+        width: 100%;
+        height: auto;
+        grid-template-rows: 1fr 1fr 4fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        flex-wrap: nowrap;
+    }
+
+    form>:nth-child(1) {
+        grid-column: 1;
+    }
+
+    form>:nth-child(2) {
+        grid-column: 1;
+    }
+
+    form>:nth-child(3) {
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    form>:nth-child(4) {
+        grid-row: 3;
+        grid-column: 2;
+    }
+
+    form>:nth-child(5) {
+        grid-column: 1 / span 2;
+    }
+
+    form>:nth-child(6) {
+        grid-row: 4;
+        grid-column: 1 / span 2;
+    }
 }
 
 /* Responsive design pour le mode imprimer */
-
 @media print {
     main h1 {
         font-size: 40px;
@@ -451,8 +553,8 @@ footer img:last-child {
     header {
         display: none;
     }
-    
-    footer img{
+
+    footer img {
         display: none;
     }
 }
